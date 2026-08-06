@@ -3,6 +3,11 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * 1" # Every Monday
+  # DEMO ONLY: run on push to the demo branch so reviewers can see the workflow
+  # in action in the fork. Remove this trigger before merging.
+  push:
+    branches:
+      - versions-commits-demo
 permissions:
   contents: read
 
@@ -11,7 +16,9 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    if: github.ref == 'refs/heads/main' && github.repository == 'cri-o/cri-o'
+    # DEMO ONLY: the second clause lets this run in the fork. Upstream only ever
+    # runs on cri-o/cri-o main. Remove the fork clause before merging.
+    if: (github.ref == 'refs/heads/main' && github.repository == 'cri-o/cri-o') || github.repository == 'thev1ndu/cri-o'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -29,9 +36,10 @@ jobs:
         if: ${{ steps.create_pr.outputs.create_pr == 'true' }}
         with:
           commit-message: Update dependency commit hashes
-          title: "Update dependency commit hashes"
-          body: Update the recorded upstream commit hashes in dependencies.yaml.
-          labels: kind/ci, release-note-none, ok-to-test
-          branch: versions-commits
-          delete-branch: true
+          title: "[demo] Update dependency commit hashes"
+          body: |
+            Demo of the versions-commits workflow running in the fork.
+            Update the recorded upstream commit hashes in dependencies.yaml.
+          branch: versions-commits-demo-result
+          delete-branch: false
           signoff: true
