@@ -69,7 +69,7 @@ dependencies:
     version: 88d8ad9d40f82726fda53c2d271e6172b4c619c9
 
   - name: crun-commit
-    version: 54f16ffbefcd022bf032af768b5c5ce075c18bfc
+    version: 0000000000000000000000000000000000000000
 
   - name: cri-tools
     version: v1.36.0
