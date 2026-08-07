@@ -69,7 +69,7 @@ dependencies:
     version: 82de887596ed8ee6d9b2ee85e4f167f307bb569b
 
   - name: conmon-rs-commit
-    version: ac8048ba3ea1132eb9db647acb8d3ce1ab36e98c
+    version: 5d33ccee5201a07f48e12fbc949ee8a99d74e351
 
   - name: cri-tools-commit
     version: 88d8ad9d40f82726fda53c2d271e6172b4c619c9
