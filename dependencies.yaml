@@ -63,13 +63,13 @@ dependencies:
     version: 82de887596ed8ee6d9b2ee85e4f167f307bb569b
 
   - name: conmon-rs-commit
-    version: ac8048ba3ea1132eb9db647acb8d3ce1ab36e98c
+    version: 82be008a0716e33512f8824cf4cbac0c2bdf5bf8
 
   - name: cri-tools-commit
     version: 88d8ad9d40f82726fda53c2d271e6172b4c619c9
 
   - name: crun-commit
-    version: 0000000000000000000000000000000000000000
+    version: 54f16ffbefcd022bf032af768b5c5ce075c18bfc
 
   - name: cri-tools
     version: v1.36.0
